@@ -1,6 +1,7 @@
 const installmentsDiv = $('#installments-div'), installments = $('#installments'), value = $('#installments-value')
 const quantity = $('#installments-quantity'), valueInCredit = $('#value-in-credit'), valueInCash = $('#value-in-cash')
-const inCardDiv = $('#in-card-div'), inCard = $('#in-card'), textInCard = $('#text-in-card')
+const inCardDiv = $('#in-card-div'), inCard = $('#in-card'), textInCard = $('#text-in-card'), plusPercent = $('#plus-percent')
+const incomeAdditionalDiv = $('#percent-income-additional-div'), incomeAdditional = $('#percent-income-additional')
 
 $('#calculator').on('submit', function (e) {
     e.preventDefault()
@@ -42,3 +43,21 @@ installments.on('click', () =>  {
         textInCard.html('no cartão')
     }
 })
+
+plusPercent.on('click', () => {
+    if (plusPercent.is(':checked')){
+        incomeAdditionalDiv.removeClass('d-none')
+        incomeAdditional.attr('required', '')
+    }
+    else{
+        incomeAdditionalDiv.addClass('d-none')
+        incomeAdditional.removeAttr('required')
+    }
+})
+
+axios.get('/api.php')
+    .then((response) => {
+        if (response.status === 200) console.log(response.data)
+        else console.error(response)
+    })
+    .catch((error) => console.error(error))

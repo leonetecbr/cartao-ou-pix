@@ -2,69 +2,111 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+          name="viewport">
     <title>No PIX ou no cartão ?</title>
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body class="pt-3 d-flex flex-column min-vh-100 bg-light">
-    <header class="container-fluid">
-        <h1 class="display-6 text-center">Melhor pagar à vista ou no cartão ?</h1>
-    </header>
-    <main class="container">
-        <form action="" novalidate id="calculator" class="mt-3 col-lg-8 mx-auto">
-            <div class="d-flex">
-                <div class="col-5">
-                    <label for="value-in-cash" class="form-label">Valor à vista</label>
-                    <div class="input-group">
-                        <span class="input-group-text" id="value-in-cash-coin">R$</span>
-                        <input type="number" name="value-in-cash" id="value-in-cash" step="0.01" min="0.01" required class="form-control">
-                        <div class="invalid-feedback text-center">Este campo é obrigatório!</div>
-                    </div>
-                    <div class="form-check my-3 d-none" id="in-card-div">
-                        <input class="form-check-input" type="checkbox" id="in-card"> <label for="in-card" class="form-check-label">No cartão</label>
-                    </div>
+<body class="pt-3 px-2 d-flex flex-column min-vh-100 bg-light">
+<header class="container-fluid">
+    <h1 class="display-6 text-center">Melhor pagar à vista ou no cartão ?</h1>
+</header>
+<main class="container">
+    <form action="" class="mt-3 col-lg-8 mx-auto" id="calculator" novalidate>
+        <h2 class="fw-light my-3">Pagamento</h2>
+        <div class="d-flex">
+            <div class="col-5">
+                <label class="form-label" for="value-in-cash">Valor à vista</label>
+                <div class="input-group">
+                    <span class="input-group-text" id="value-in-cash-coin">R$</span>
+                    <input class="form-control" id="value-in-cash" min="0.01" name="value-in-cash" required step="0.01"
+                           type="number">
+                    <div class="invalid-feedback text-center">Este campo é obrigatório!</div>
                 </div>
-                <div class="col-5 ms-auto">
-                    <label for="value-in-credit" class="form-label">Valor <span id="text-in-card">no cartão</span></label>
-                    <div class="input-group">
-                        <span class="input-group-text" id="value-in-credit-coin">R$</span>
-                        <input type="number" name="value-in-credit" id="value-in-credit" step="0.01" min="0.01" required class="form-control">
-                        <div class="invalid-feedback text-center">Este campo é obrigatório!</div>
-                    </div>
-                    <div class="form-check my-3">
-                        <input class="form-check-input" type="checkbox" id="installments"> <label for="installments" class="form-check-label">Parcelado</label>
-                    </div>
-                    <div id="installments-div" class="d-none justify-content-around">
-                        <div class="col-5">
-                            <label for="installments-quantity" class="form-label">Parcelas</label>
-                            <div class="input-group">
-                                <input type="number" name="installments-quantity" id="installments-quantity" step="1" min="1" max="36" placeholder="12" class="form-control">
-                                <span class="input-group-text" id="installments-quantity-symbol">x</span>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <label for="installments-value" class="form-label">Valor</label>
-                            <div class="input-group">
-                                <span class="input-group-text" id="installments-value-coin">R$</span>
-                                <input type="number" name="installments-value" id="installments-value" step="0.01" min="0.01" placeholder="1000,00" class="form-control">
-                            </div>
-                        </div>
-                    </div>
+                <div class="form-check my-3 d-none" id="in-card-div">
+                    <input class="form-check-input" id="in-card" type="checkbox">
+                    <label class="form-check-label" for="in-card">No cartão</label>
                 </div>
             </div>
-            <div id="result" class="alert text-center d-none mt-3">
+            <div class="col-5 ms-auto">
+                <label class="form-label" for="value-in-credit">Valor <span id="text-in-card">no cartão</span></label>
+                <div class="input-group">
+                    <span class="input-group-text" id="value-in-credit-coin">R$</span>
+                    <input class="form-control" id="value-in-credit" min="0.01" name="value-in-credit" required
+                           step="0.01" type="number">
+                    <div class="invalid-feedback text-center">Este campo é obrigatório!</div>
+                </div>
+                <div class="form-check my-3">
+                    <input class="form-check-input" id="installments" type="checkbox">
+                    <label class="form-check-label" for="installments">Parcelado</label>
+                </div>
             </div>
-            <div class="mt-3 text-center">
-                <button class="btn btn-secondary btn-lg w-75" type="submit">Calcular</button>
+        </div>
+        <div class="d-none justify-content-around col-md-5 ms-md-auto" id="installments-div">
+            <div class="col-5">
+                <label class="form-label" for="installments-quantity">Parcelas</label>
+                <div class="input-group">
+                    <input class="form-control" id="installments-quantity" max="36" min="1" name="installments-quantity"
+                           placeholder="12" step="1" type="number">
+                    <span class="input-group-text" id="installments-quantity-symbol">x</span>
+                </div>
             </div>
-        </form>
-    </main>
-    <footer class="container-fluid border-top text-center p-3 fw-light mt-auto">
-        &copy; 2022 - Leone Oliveira
-    </footer>
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/bootstrap.bundle.min.js"></script>
-    <script src="/js/app.js" defer></script>
+            <div class="col-6">
+                <label class="form-label" for="installments-value">Valor</label>
+                <div class="input-group">
+                    <span class="input-group-text" id="installments-value-coin">R$</span>
+                    <input class="form-control" id="installments-value" min="0.01" name="installments-value"
+                           placeholder="1000,00" step="0.01" type="number">
+                </div>
+            </div>
+        </div>
+        <h2 class="fw-light my-3"><label for="percent-income">Investimento</label></h2>
+        <div class="col-7 col-md-12 d-md-flex mx-auto justify-content-around">
+            <div class="col-md-4">
+                <div class="input-group">
+                    <input class="form-control" id="percent-income" min="0.01" name="percent-income" required step="0.01"
+                           type="number" value="100">
+                    <span class="input-group-text"><label for="indexer">%</label></span>
+                    <select class="input-group-text form-select" id="indexer">
+                        <option value="1">CDI</option>
+                        <option value="2">Selic</option>
+                        <option value="3">a.m.</option>
+                    </select>
+                    <div class="invalid-feedback text-center">Este campo é obrigatório!</div>
+                </div>
+            </div>
+            <div class="col-auto col-md-1 text-center">
+                <div class="form-check-inline form-switch text-center fs-3 my-3 my-md-0">
+                    <input class="form-check-input" id="plus-percent" type="checkbox">
+                    <label class="form-check-label" for="plus-percent">+</label>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="input-group d-none" id="percent-income-additional-div">
+                    <input class="form-control" id="percent-income-additional" min="0.01" name="percent-income-additional"
+                           required step="0.01" type="number">
+                    <span class="input-group-text"><label for="percent-income-additional">% a.m.</label></span>
+                    <div class="invalid-feedback text-center">Este campo é obrigatório!</div>
+                </div>
+            </div>
+        </div>
+        <h2 class="fw-light my-3">Benefícios do cartão</h2>
+        <div class="d-flex">
+
+        </div>
+        <div class="alert text-center d-none mt-3" id="result">
+        </div>
+        <div class="mt-3 text-center">
+            <button class="btn btn-secondary btn-lg w-75" type="submit">Calcular</button>
+        </div>
+    </form>
+</main>
+<footer class="container-fluid border-top text-center p-3 fw-light mt-auto">
+    &copy; 2022 - Leone Oliveira
+</footer>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/bootstrap.bundle.min.js"></script>
+<script src="/js/axios.min.js"></script>
+<script defer src="/js/app.js"></script>
 </body>
 </html>

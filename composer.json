@@ -1,0 +1,31 @@
+{
+    "name": "leone/cartao-ou-pix",
+    "license": "MIT",
+    "type": "project",
+    "version": "0.0.1",
+    "support": {
+        "email": "falecom@leone.tec.br"
+    },
+    "authors": [
+        {
+            "name": "Leone Oliveira",
+            "email": "falecom@leone.tec.br",
+            "homepage": "https://leone.tec.br",
+            "role": "Developer"
+        }
+    ],
+    "scripts": {
+        "pre-install-cmd": [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ]
+    },
+    "require": {
+        "php": ">=7.4",
+        "vlucas/phpdotenv": "^5.4"
+    },
+    "autoload": {
+        "psr-4": {
+        }
+    },
+    "readme": "/README.md"
+}
