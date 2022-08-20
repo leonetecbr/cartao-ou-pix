@@ -1,13 +1,22 @@
 const installmentsDiv = $('#installments-div'), installments = $('#installments'), value = $('#installments-value')
 const quantity = $('#installments-quantity'), valueInCredit = $('#value-in-credit'), valueInCash = $('#value-in-cash')
-const inCardDiv = $('#in-card-div'), inCard = $('#in-card'), textInCard = $('#text-in-card'), plusPercent = $('#plus-percent')
+const inCardDiv = $('#in-card-div'), inCard = $('#in-card'), textInCard = $('#text-in-card'),
+    plusPercent = $('#plus-percent')
 const incomeAdditionalDiv = $('#percent-income-additional-div'), incomeAdditional = $('#percent-income-additional')
+const benefitsCashback = $('#benefits-credit-cashback'), benefitsPoints = $('#benefits-credit-points')
+const benefitsCashbackDiv = $('#benefits-credit-cashback-div'), benefitsPointsDiv = $('#benefits-credit-points-div')
+const benefits = $('input[name="benefits-credit"]'), currency = $('#currency')
+
+const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+let tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl)
+})
 
 $('#calculator').on('submit', function (e) {
     e.preventDefault()
     if (!this.checkValidity()) {
         e.stopPropagation()
-    }else{
+    } else {
         let credit = parseInt(valueInCredit.val()), cash = parseInt(valueInCash.val())
         let result = $('#result'), text = 'É mais vantajoso pagar '
         if (credit <= cash) {
@@ -20,12 +29,12 @@ $('#calculator').on('submit', function (e) {
     $(this).addClass('was-validated')
 })
 
-function changeInstallments(){
+function changeInstallments() {
     let data = quantity.val() * value.val()
     valueInCredit.val(data)
 }
 
-installments.on('click', () =>  {
+installments.on('change', () => {
     if (installments.is(':checked')) {
         installmentsDiv.removeClass('d-none').addClass('d-flex')
         value.attr('required', '').on('change', changeInstallments)
@@ -44,14 +53,26 @@ installments.on('click', () =>  {
     }
 })
 
-plusPercent.on('click', () => {
-    if (plusPercent.is(':checked')){
+plusPercent.on('change', () => {
+    if (plusPercent.is(':checked')) {
         incomeAdditionalDiv.removeClass('d-none')
         incomeAdditional.attr('required', '')
-    }
-    else{
+    } else {
         incomeAdditionalDiv.addClass('d-none')
         incomeAdditional.removeAttr('required')
+    }
+})
+
+benefits.on('change', () => {
+    if (benefitsCashback.is(':checked')) {
+        benefitsCashbackDiv.removeClass('d-none')
+        benefitsPointsDiv.addClass('d-none')
+    } else if (benefitsPoints.is(':checked')) {
+        benefitsCashbackDiv.addClass('d-none')
+        benefitsPointsDiv.removeClass('d-none')
+    } else {
+        benefitsPointsDiv.addClass('d-none')
+        benefitsCashbackDiv.addClass('d-none')
     }
 })
 
