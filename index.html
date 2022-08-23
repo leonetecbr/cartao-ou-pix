@@ -98,11 +98,14 @@
                 <div class="input-group d-none" id="percent-income-additional-div">
                     <input class="form-control" id="percent-income-additional" min="0.01"
                            name="percent-income-additional"
-                           placeholder="1.12" required step="0.01" type="number">
+                           placeholder="1.12" step="0.01" type="number">
                     <span class="input-group-text"><label for="percent-income-additional">% a.m.</label></span>
                     <div class="invalid-feedback text-center">Este campo é obrigatório!</div>
                 </div>
             </div>
+        </div>
+        <div class="text-center">
+            <p class="text-muted">Nessa simulação consideramos que o valor ficaria investido por 30 dias até o pagamento da fatura.</p>
         </div>
         <h2 class="fw-light my-3">Benefícios do cartão <sup class="text-muted fs-6" data-bs-placement="right"
                                                             data-bs-toggle="tooltip"
@@ -128,7 +131,7 @@
         <div class="d-none my-3" id="benefits-credit-cashback-div">
             <div class="col-8 col-md-4 mx-auto">
                 <div class="input-group">
-                    <input class="form-control" id="percent-cashback" min="0.01" name="percent-cashback" required
+                    <input class="form-control" id="percent-cashback" min="0.01" name="percent-cashback"
                            step="0.01"
                            type="number" value="1">
                     <span class="input-group-text"><label for="percent-cashback">% de cashback</label></span>
@@ -139,7 +142,7 @@
         <div class="d-none my-3" id="benefits-credit-points-div">
             <div class="col-md-6 mx-auto">
                 <div class="input-group">
-                    <input class="form-control" id="points" min="0.01" name="points" required step="0.01"
+                    <input class="form-control" id="points" min="0.01" name="points" step="0.01"
                            type="number" value="1">
                     <span class="input-group-text"><label for="currency">ponto(s) por</label></span>
                     <select class="input-group-text form-select" id="currency">
@@ -151,11 +154,13 @@
                 <div class="input-group mt-3">
                     <span class="input-group-text"><label for="value-per-points">R$</label></span>
                     <input class="form-control" id="value-per-points" min="0.01" name="value-per-points" placeholder="24"
-                           required
                            step="0.01" type="number">
                     <span class="input-group-text"><label for="currency">por 1.000 pontos</label></span>
                     <div class="invalid-feedback text-center">Este campo é obrigatório!</div>
                 </div>
+            </div>
+            <div class="text-center mt-2">
+                <p class="text-muted">Para essa simulação consideramos o dólar a <span id="dollar-value"></span>.</p>
             </div>
         </div>
         <div class="alert text-center d-none mt-3" id="result">
