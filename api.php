@@ -1,6 +1,4 @@
-{"cdi":1.14,"usd":5.17,"selic":1.15}
 <?php
-die;
 require(__DIR__ . '/vendor/autoload.php');
 
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);

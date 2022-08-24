@@ -1,34 +1,51 @@
 <!doctype html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"/>
     <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
-          name="viewport">
-    <title>No PIX ou no cartão ?</title>
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/css/bootstrap-icons.css" rel="stylesheet">
+          name="viewport"/>
+    <title>No PIX ou no cartão?</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="/css/bootstrap-icons.css" rel="stylesheet"/>
+    <meta content="pt_BR" property="og:locale"/>
+    <meta content="website" property="og:type"/>
+    <meta content="No PIX ou no cartão?" property="og:title"/>
+    <meta content="index, follow" name="robots"/>
+    <meta content="Leone Oliveira" name="author"/>
+    <meta content="As lojas costumam dá desconto para pagamento à vista, mas será vantajoso mesmo, pagar à vista?
+    Calcule agora mesmo"
+          name="description"/>
+    <meta content="As lojas costumam dá desconto para pagamento à vista, mas será vantajoso mesmo, pagar à vista?
+    Calcule agora mesmo"
+          name="og:description"/>
 </head>
 <body class="pt-3 px-2 d-flex flex-column min-vh-100 bg-light">
 <header class="container-fluid">
-    <h1 class="display-6 text-center">Melhor pagar à vista ou no cartão ? <sup class="text-muted fs-6"
-                                                                               data-bs-placement="bottom"
-                                                                               data-bs-toggle="tooltip"
-                                                                               title="Lojas costumam dá desconto para pagamento à vista, mas será que é vantajoso mesmo pagar à vista ?"><i
-            class="bi bi-info-circle-fill"></i></sup></h1>
+    <h1 class="display-6 text-center">
+        Melhor pagar à vista ou no cartão?
+        <sup class="text-muted fs-6" data-bs-placement="bottom" data-bs-toggle="tooltip"
+             title="As lojas costumam dá desconto para pagamento à vista, mas será vantajoso mesmo pagar à vista?">
+            <i class="bi bi-info-circle-fill"></i>
+        </sup>
+    </h1>
 </header>
 <main class="container">
-    <form action="" class="mt-3 col-lg-8 mx-auto" id="calculator" novalidate>
-        <h2 class="fw-light my-3">Pagamento <sup class="text-muted fs-6" data-bs-placement="right"
-                                                 data-bs-toggle="tooltip"
-                                                 title="Preencha os valores para pagamento à vista e no cartão/parcelado para que o calculo seja feito."><i
-                class="bi bi-info-circle-fill"></i></sup></h2>
+    <form class="mt-3 col-lg-8 mx-auto" id="calculator" novalidate>
+        <h2 class="fw-light my-3">
+            Pagamento
+            <sup class="text-muted fs-6" data-bs-placement="right" data-bs-toggle="tooltip"
+                 title="Preencha os valores para pagamento à vista e no cartão/parcelado para que o calculo seja
+                     feito.">
+                <i class="bi bi-info-circle-fill"></i>
+            </sup>
+        </h2>
         <div class="d-flex">
             <div class="col-5">
                 <label class="form-label" for="value-in-cash">Valor à vista</label>
                 <div class="input-group">
                     <span class="input-group-text" id="value-in-cash-coin">R$</span>
-                    <input class="form-control" id="value-in-cash" min="0.01" name="value-in-cash" required step="0.01"
-                           type="number">
+                    <input class="form-control" id="value-in-cash" min="0.01" name="value-in-cash" required
+                           step="0.01" type="number">
                     <div class="invalid-feedback text-center">Este campo é obrigatório!</div>
                 </div>
                 <div class="form-check my-3 d-none" id="in-card-div">
@@ -37,7 +54,9 @@
                 </div>
             </div>
             <div class="col-5 ms-auto">
-                <label class="form-label" for="value-in-credit">Valor <span id="text-in-card">no cartão</span></label>
+                <label class="form-label" for="value-in-credit">
+                    Valor <span id="text-in-card">no cartão</span>
+                </label>
                 <div class="input-group">
                     <span class="input-group-text" id="value-in-credit-coin">R$</span>
                     <input class="form-control" id="value-in-credit" min="0.01" name="value-in-credit" required
@@ -54,8 +73,8 @@
             <div class="col-5">
                 <label class="form-label" for="installments-quantity">Parcelas</label>
                 <div class="input-group">
-                    <input class="form-control" id="installments-quantity" max="36" min="1" name="installments-quantity"
-                           placeholder="12" step="1" type="number">
+                    <input class="form-control" id="installments-quantity" max="36" min="1" name="installments-quantity" placeholder="12"
+                           step="1" type="number">
                     <span class="input-group-text" id="installments-quantity-symbol">x</span>
                 </div>
             </div>
@@ -68,12 +87,15 @@
                 </div>
             </div>
         </div>
-        <h2 class="fw-light my-3"><label for="percent-income">Investimento</label> <sup class="text-muted fs-6"
-                                                                                        data-bs-placement="right"
-                                                                                        data-bs-toggle="tooltip"
-                                                                                        title="Para ser vantajoso pagar um pouco a mais no cartão, o dinheiro deve ficar investido até o dia do vencimento da fatura."><i
-                class="bi bi-info-circle-fill"></i></sup></h2>
-        <div class="col-8 col-md-12 d-md-flex mx-auto justify-content-around my-4">
+        <h2 class="fw-light my-3">
+            <label for="percent-income">Investimento</label>
+            <sup class="text-muted fs-6" data-bs-placement="right" data-bs-toggle="tooltip"
+                 title="Para ser vantajoso pagar um pouco a mais no cartão, o dinheiro deve ficar investido até o
+                     dia do vencimento da fatura.">
+                <i class="bi bi-info-circle-fill"></i>
+            </sup>
+        </h2>
+        <div class="col-8 col-md-12 d-md-flex mx-auto justify-content-around mt-4 mb-md-3">
             <div class="col-md-4">
                 <div class="input-group">
                     <input class="form-control" id="percent-income" min="0.01" name="percent-income" required
@@ -94,8 +116,8 @@
                     <label class="form-check-label" for="plus-percent">+</label>
                 </div>
             </div>
-            <div class="col-md-4 mb-3">
-                <div class="input-group d-none" id="percent-income-additional-div">
+            <div class="col-md-4 mb-3 mb-md-0 d-none" id="percent-income-additional-div">
+                <div class="input-group">
                     <input class="form-control" id="percent-income-additional" min="0.01"
                            name="percent-income-additional"
                            placeholder="1.12" step="0.01" type="number">
@@ -104,13 +126,22 @@
                 </div>
             </div>
         </div>
-        <div class="text-center">
-            <p class="text-muted">Nessa simulação consideramos que o valor ficaria investido por 30 dias até o pagamento da fatura.</p>
+        <div class="d-flex justify-content-center mb-2">
+            <input class="form-check-input" id="free-irrf" name="free-irrf" type="checkbox">
+            <label class="form-check-label" for="free-irrf">&nbsp;Isento de IRRF</label>
         </div>
-        <h2 class="fw-light my-3">Benefícios do cartão <sup class="text-muted fs-6" data-bs-placement="right"
-                                                            data-bs-toggle="tooltip"
-                                                            title="Outro ponto que faz o pagamento no cartão ser mais vantajoso é o acumulo de pontos ou ganho de cashback concedido pelo banco emissor."><i
-                class="bi bi-info-circle-fill"></i></sup></h2>
+        <div class="text-center">
+            <p class="text-muted">Nessa simulação consideramos que o valor ficaria investido por 30 dias até o
+                pagamento da fatura.</p>
+        </div>
+        <h2 class="fw-light my-3">
+            Benefícios do cartão
+            <sup class="text-muted fs-6" data-bs-placement="right" data-bs-toggle="tooltip"
+                 title="Outro ponto que faz o pagamento no cartão ser mais vantajoso é o acumulo de pontos ou ganho
+                     de cashback concedido pelo banco emissor.">
+                <i class="bi bi-info-circle-fill"></i>
+            </sup>
+        </h2>
         <div class="d-flex my-3">
             <div class="form-check form-check-inline">
                 <input class="form-check-input" id="benefits-credit-cashback" name="benefits-credit" required
@@ -123,8 +154,8 @@
                 <label class="form-check-label" for="benefits-credit-points">Pontos</label>
             </div>
             <div class="form-check form-check-inline">
-                <input class="form-check-input" id="benefits-credit-none" name="benefits-credit" required type="radio"
-                       value="3">
+                <input class="form-check-input" id="benefits-credit-none" name="benefits-credit" required
+                       type="radio" value="3">
                 <label class="form-check-label" for="benefits-credit-none">Nenhum</label>
             </div>
         </div>
@@ -142,9 +173,12 @@
         <div class="d-none my-3" id="benefits-credit-points-div">
             <div class="col-md-6 mx-auto">
                 <div class="input-group">
-                    <input class="form-control" id="points" min="0.01" name="points" step="0.01"
-                           type="number" value="1">
-                    <span class="input-group-text"><label for="currency">ponto(s) por</label></span>
+                    <label class="visually-hidden" for="points">Quantidade de pontos</label>
+                    <input class="form-control" id="points" min="0.01" name="points" step="0.01" type="number"
+                           value="1">
+                    <span class="input-group-text">
+                            <label for="currency">ponto(s) por</label>
+                        </span>
                     <select class="input-group-text form-select" id="currency">
                         <option value="1">Dólar</option>
                         <option value="2">Real</option>
@@ -152,18 +186,25 @@
                     <div class="invalid-feedback text-center">Este campo é obrigatório!</div>
                 </div>
                 <div class="input-group mt-3">
-                    <span class="input-group-text"><label for="value-per-points">R$</label></span>
-                    <input class="form-control" id="value-per-points" min="0.01" name="value-per-points" placeholder="24"
+                    <span class="input-group-text">R$</span>
+                    <input class="form-control" id="value-per-points" min="0.01" name="value-per-points"
+                           placeholder="24"
                            step="0.01" type="number">
-                    <span class="input-group-text"><label for="currency">por 1.000 pontos</label></span>
+                    <span class="input-group-text"><label for="value-per-points">por 1.000 pontos</label></span>
                     <div class="invalid-feedback text-center">Este campo é obrigatório!</div>
                 </div>
             </div>
             <div class="text-center mt-2">
-                <p class="text-muted">Para essa simulação consideramos o dólar a <span id="dollar-value"></span>.</p>
+                <p class="text-muted">
+                    Para essa simulação consideramos o dólar a <span id="dollar-value"></span>.
+                </p>
             </div>
         </div>
         <div class="alert text-center d-none mt-3" id="result">
+        </div>
+        <div class="form-text text-center">
+            Este resultado é calculado usando dados de CDI, Selic e Dólar que podem estar desatualizados e/ou sofrer
+            alterações no período do parcelamento, portanto siga com cautela e por sua conta em risco.
         </div>
         <div class="my-3 text-center">
             <button class="btn btn-secondary btn-lg w-75" type="submit">Calcular</button>
@@ -176,6 +217,6 @@
 <script src="/js/jquery.min.js"></script>
 <script src="/js/bootstrap.bundle.min.js"></script>
 <script src="/js/axios.min.js"></script>
-<script defer src="/js/app.js"></script>
+<script defer src="/js/app.min.js"></script>
 </body>
 </html>
